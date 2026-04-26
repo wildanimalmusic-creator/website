@@ -292,15 +292,18 @@ button {
    rises into view from below, overlays the photo centered, then the entire
    hero exits up to reveal the news section beneath. Pure CSS — no JS.
 
-   Layout: <section class="hero"> wraps a sticky <.hero__viewport> that pins
-   to the top of the scrollport for half a viewport's worth of scroll. Inside,
-   the photo is an absolutely-positioned <.hero__stage> and the text is a
-   sibling <.hero__overlay>. Animation runs against a view-timeline named
-   on the .hero section using the `contain` range, which is the period the
-   150vh hero fully covers the viewport (i.e. the sticky duration). Linear
-   keyframes drive the text continuously: it rises from below, crosses the
-   center, and exits above without pause. Hero ends as text exits, so the
-   news section emerges in the same scroll moment.
+   Layout: <section class="hero"> is pulled up under the sticky header
+   via negative margin so the sticky <.hero__viewport> pins to the top
+   of the viewport from scrollY=0 (no initial 88px shift). Inside, the
+   photo is an absolutely-positioned <.hero__stage> and the text is a
+   sibling <.hero__overlay>. Animation runs against a view-timeline
+   named on the .hero section using the `contain` range, which is the
+   period the 150vh hero fully covers the viewport (i.e. the sticky
+   duration). Linear keyframes drive the text continuously: it rises
+   from below, crosses the center, and exits above without pause. The
+   photo's top is anchored to the viewport top throughout via a
+   counter-translate that mirrors the sticky's drift; disappearance is
+   bottom-up, with the news section (z-index 1) rising over the photo.
    -------------------------------------------------------------------------- */
 .hero {
   padding: 0;
@@ -395,6 +398,11 @@ button {
   @media (min-width: 1024px) {
     .hero {
       min-height: 150vh;
+      /* Pull the hero up under the sticky header so the photo lands
+         flush with the top of the viewport from the very first paint —
+         no 88px shift the moment the user starts scrolling. The header
+         (z-index 50) keeps painting on top of the photo. */
+      margin-top: calc(-1 * var(--header-height));
       view-timeline-name: --hero-stage;
       view-timeline-axis: block;
     }
@@ -410,17 +418,26 @@ button {
       position: absolute;
       inset: 0;
       height: 100%;
-      /* Counter the sticky's upward drift so the photo's framing stays
-         intact while the text exits and the news rises in. The peak
-         counter at mid-exit equals the sticky shift at that point
-         (50vh), keeping the photo pinned through the readable phase;
-         it then releases back to 0 by exit end so the photo clears
-         cleanly as the news takes over. */
-      animation-name: hero-photo-freeze;
+      /* Anchor the photo's top to the viewport top throughout the
+         scroll. During sticky (scrollY 0–50vh) this is automatic;
+         past the sticky end the counter-translate exactly mirrors the
+         sticky's upward drift so the photo never moves. The news
+         section (next sibling, z-index 1) rises over the photo from
+         the bottom, so disappearance is bottom-up — the photo's top
+         stays put until the very last scroll moment. */
+      animation-name: hero-photo-anchor;
       animation-timing-function: linear;
       animation-fill-mode: both;
       animation-timeline: --hero-stage;
       animation-range: contain 0% exit 100%;
+    }
+
+    /* News section (and anything after the hero) needs to paint over
+       the sticky photo, since position:sticky + transform creates a
+       stacking context that would otherwise hide it. */
+    .hero + .section {
+      position: relative;
+      z-index: 1;
     }
 
     .hero__overlay {
@@ -484,11 +501,10 @@ button {
   100% { transform: translateY(-100%); opacity: 0; }
 }
 
-@keyframes hero-photo-freeze {
+@keyframes hero-photo-anchor {
     0%    { transform: translateY(0); }
    33.3%  { transform: translateY(0); }
-   66.6%  { transform: translateY(50vh); }
-  100%    { transform: translateY(0); }
+  100%    { transform: translateY(100vh); }
 }
 
 @media (prefers-reduced-motion: reduce) {
