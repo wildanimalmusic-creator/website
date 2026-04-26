@@ -31,3 +31,20 @@ desktop.ini
 # Env / local
 .env
 .env.local
+
+# CC batch runner state
+.claude/
+cc-logs/
+
+# Jekyll build artifacts
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Bundler local state
+.bundle/
+vendor/
+
+# CC prompts at repo root (kept in prompts/ instead)
+/*-batch.md

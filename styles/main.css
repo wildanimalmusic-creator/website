@@ -285,12 +285,37 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   Hero
+   Hero — two-column layout (photo left, text right)
    -------------------------------------------------------------------------- */
 .hero {
-  text-align: center;
-  padding: var(--space-9) 0 var(--space-7);
+  padding: 0;
 }
+
+.hero__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.hero__photo {
+  position: relative;
+  overflow: hidden;
+}
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-9) var(--space-7);
+}
+
 .hero__wordmark {
   margin: 0 auto var(--space-5);
   max-width: 720px;
@@ -329,8 +354,28 @@ button {
   color: var(--color-text-strong);
 }
 
-@media (max-width: 768px) {
-  .hero { padding: var(--space-7) 0 var(--space-6); }
+/* Tablet / small desktop: stacked, 400px photo banner */
+@media (max-width: 1099px) {
+  .hero__layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero__photo {
+    height: 400px;
+  }
+  .hero__text {
+    padding: var(--space-8) var(--space-5);
+  }
+}
+
+/* Small mobile: stacked, 220px photo banner */
+@media (max-width: 767px) {
+  .hero__photo {
+    height: 220px;
+  }
+  .hero__text {
+    padding: var(--space-7) var(--space-5) var(--space-6);
+  }
   .hero__tagline { font-size: var(--fs-lg); }
   .hero__intro { font-size: var(--fs-md); }
 }
