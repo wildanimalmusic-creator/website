@@ -83,9 +83,10 @@ nav_active: about       # optional; must match a _data/nav.yml key
 
 ## JS posture
 
-JS today is the mobile-menu toggle in `_includes/script.html`. CSS-only is
-the default for layout, transitions, and sticky-scroll effects (parallax,
-alternating columns, hover states). JS lands when CSS can't carry the
+JS today is the mobile-menu toggle in `_includes/script.html` and the
+animation web components in `_includes/animation.html`. CSS-only is
+the default for layout, transitions, and sticky-scroll effects
+(alternating columns, hover states). JS lands when CSS can't carry the
 weight — page-load animations, audio playback, scroll-driven sequencing.
 New JS arrives as HTML web components that upgrade working static markup
 on `connectedCallback`. The default animation primitive is Motion
