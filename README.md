@@ -14,6 +14,7 @@ _includes/head.html             <head> contents (title, description, font, CSS)
 _includes/header.html           Site header with logo + primary nav
 _includes/footer.html           Social row, footer nav, legal line
 _includes/script.html           Mobile-menu toggle (one place, used everywhere)
+_data/nav.yml                   Primary nav items (label, href, key) — looped in header/footer
 _config.yml                     Site title/description + Jekyll exclude list
 styles/main.css                 Design system + page styles
 assets/fonts/                   Self-hosted Oswald (variable woff2)
@@ -35,14 +36,23 @@ own only their `<main>` body plus a small front-matter block.
    layout: default
    title: My Page          # optional; omit on the home page
    description: ...        # optional; falls back to site default
-   nav_active: about       # optional; one of home|about|music|live|lyrics|musings|contact
+   nav_active: about       # optional; must match a `key` in _data/nav.yml
    ---
    ```
 
 2. Below the front matter, write only the page-specific markup — typically a
    `<main>` element. The layout supplies everything else.
-3. To link the new page from the primary nav, edit `_includes/header.html`.
-   To link it from the footer, edit `_includes/footer.html`.
+3. To link the new page from the primary nav, add an entry to `_data/nav.yml`:
+
+   ```yaml
+   - label: About
+     href: /about.html
+     key: about
+   ```
+
+   The header and footer iterate over this list, so adding the entry links the
+   page in both places. The page's `nav_active` front-matter value must equal
+   the `key` of its `nav.yml` entry for the active-link styling to apply.
 
 ## Develop locally
 
@@ -91,7 +101,11 @@ configure. The new commit is live within a minute or two.
 
 - **No frameworks**, no Tailwind, no React. Plain HTML + CSS.
 - **Jekyll for shared HTML only.** Layouts and includes for header/footer/head.
-  No plugins, no data files, no Liquid loops over hardcoded lists.
+  Small `_data/*.yml` files are welcome where they remove duplication — e.g.
+  `_data/nav.yml` is the single source of truth for the primary nav, and the
+  header and footer iterate over it with a Liquid `for` loop. Reach for a data
+  file when the same list would otherwise be hand-maintained in two places.
+  No plugins.
 - **No JS** beyond a tiny mobile-menu toggle in `_includes/script.html`.
 - **Self-host fonts.** Never link the Google Fonts CDN (GDPR risk after the
   2022 Munich ruling — relevant for a Berlin-based site).
