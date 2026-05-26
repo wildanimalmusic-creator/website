@@ -664,7 +664,6 @@ button {
   text-indent: calc(-1 * var(--space-6));
 }
 .dialogue__speaker {
-  margin-right: var(--space-2);
   font-weight: 700;
   color: var(--color-accent);
 }
