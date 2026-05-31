@@ -10,7 +10,15 @@ nav_active: about
     <parallax-layout class="parallax-layout about__layout">
 
       <div class="parallax-text">
-        <h1 class="page__title about__title">About</h1>
+        <h1 class="page__title about__title">
+          <picture>
+            <source type="image/webp"
+                    srcset="{{ '/assets/images/heading-about-400.webp' | relative_url }} 400w, {{ '/assets/images/heading-about-800.webp' | relative_url }} 800w, {{ '/assets/images/heading-about-1280.webp' | relative_url }} 1280w"
+                    sizes="(max-width: 768px) 88vw, 420px">
+            <img src="{{ '/assets/images/heading-about-1280.png' | relative_url }}" alt="" width="1280" height="720">
+          </picture>
+          <span class="visually-hidden">About</span>
+        </h1>
         <p>With a name inspired by exclamatory motifs from a foxy Wes Anderson film, Wild Animal was established to explore themes of being wild in a domestic world. It is our hypothesis that wilderness can be found again, within. Even in the confines of a culture and society which is by its very nature taming. Musically, the guiding principle is to create relatable pop rock music that is nonetheless complex and substantial.</p>
         <p>As people, we are <strong>Marie and John Therrien</strong>. A multinational married couple living in Berlin, seeking new ways of embodying spirit which appreciate the beauty of nature, play and visceral as well as contemplative experiences. We hope to bring harmony into this world. Seeking the right balance of consonance and dissonance to move the song.</p>
       </div>

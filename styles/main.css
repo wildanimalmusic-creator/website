@@ -589,6 +589,32 @@ button {
   font-size: var(--fs-lg);
 }
 
+/* Image-backed page headings: Marie's hand-lettered title art replaces the
+   plain-text h1. The text stays in a .visually-hidden span for a11y + SEO. */
+.page__title picture {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin-inline: auto;
+}
+.page__title img { width: 100%; height: auto; }
+.about__title picture { margin-inline: 0; }  /* about heading is left-aligned */
+
+/* Magisches Theater title art is sage-toned (≈ --color-bg-alt); a dark
+   backing makes the pale lettering legible. */
+.page__title--dark {
+  background: var(--color-text-strong);
+  padding: var(--space-5) var(--space-6);
+}
+.page__title--dark picture { max-width: 660px; }
+/* The art's lettering sits high in its 16:9 canvas (content y ~22-54%); crop to
+   that band, biased upward, so the dark backing frames the title not a void. */
+.page__title--dark img {
+  aspect-ratio: 1280 / 346;
+  object-fit: cover;
+  object-position: 50% 27%;
+}
+
 @media (max-width: 768px) {
   .page { padding: var(--space-7) 0; }
 }

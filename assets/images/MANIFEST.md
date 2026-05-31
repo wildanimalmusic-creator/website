@@ -16,11 +16,14 @@ Notes:
 | https://www.wildanimalmusic.com/uploads/1/3/0/7/130754475/wild-animal-1_orig.png | `_originals/logo.png` | `logo-400.webp`, `logo-800.webp`, `logo-1312.webp`, `logo-1312.png` |
 | https://www.wildanimalmusic.com/uploads/1/3/0/7/130754475/wild-animal-2-1_orig.png | `_originals/wordmark-home.png` | `wordmark-home-400.webp`, `wordmark-home-800.webp`, `wordmark-home-1312.webp`, `wordmark-home-1312.png` |
 | https://www.wildanimalmusic.com/uploads/1/3/0/7/130754475/published/wild-animal-2-1_1.png | `_originals/wordmark-musings.png` | `wordmark-musings-400.webp`, `wordmark-musings-800.webp`, `wordmark-musings-1309.webp`, `wordmark-musings-1309.png` |
-| https://www.wildanimalmusic.com/uploads/1/3/0/7/130754475/2_orig.png | `_originals/heading-about.png` | `heading-about-400.webp`, `heading-about-800.webp`, `heading-about-800.png` |
-| https://www.wildanimalmusic.com/uploads/1/3/0/7/130754475/mu_orig.png | `_originals/heading-music.png` | `heading-music-400.webp`, `heading-music-800.webp`, `heading-music-800.png` |
-| https://www.wildanimalmusic.com/uploads/1/3/0/7/130754475/4_orig.png | `_originals/heading-live.png` | `heading-live-400.webp`, `heading-live-800.webp`, `heading-live-800.png` |
-| https://www.wildanimalmusic.com/uploads/1/3/0/7/130754475/ly_orig.png | `_originals/heading-lyrics.png` | `heading-lyrics-400.webp`, `heading-lyrics-800.webp`, `heading-lyrics-800.png` |
-| https://www.wildanimalmusic.com/uploads/1/3/0/7/130754475/5_orig.png | `_originals/heading-contact.png` | `heading-contact-400.webp`, `heading-contact-800.webp`, `heading-contact-800.png` |
+| Marie 2025 | `_originals/heading-about.png` | `heading-about-400.webp`, `heading-about-800.webp`, `heading-about-1280.webp`, `heading-about-1280.png` |
+| Marie 2025 | `_originals/heading-music.png` | `heading-music-400.webp`, `heading-music-800.webp`, `heading-music-1280.webp`, `heading-music-1280.png` |
+| Marie 2025 | `_originals/heading-live.png` | `heading-live-400.webp`, `heading-live-800.webp`, `heading-live-1280.webp`, `heading-live-1280.png` |
+| Marie 2025 | `_originals/heading-lyrics.png` | `heading-lyrics-400.webp`, `heading-lyrics-800.webp`, `heading-lyrics-1280.webp`, `heading-lyrics-1280.png` |
+| Marie 2025 | `_originals/heading-contact.png` | `heading-contact-400.webp`, `heading-contact-800.webp`, `heading-contact-1280.webp`, `heading-contact-1280.png` |
+| Marie 2025 | `_originals/heading-musings.png` | `heading-musings-400.webp`, `heading-musings-800.webp`, `heading-musings-1280.webp`, `heading-musings-1280.png` |
+| Marie 2025 | `_originals/heading-magisches-theater.png` | `heading-magisches-theater-400.webp`, `heading-magisches-theater-800.webp`, `heading-magisches-theater-1280.webp`, `heading-magisches-theater-1280.png` |
+| Marie 2025 | `_originals/heading-self-titled2025.png` | `heading-self-titled2025-400.webp`, `heading-self-titled2025-800.webp`, `heading-self-titled2025-1280.webp`, `heading-self-titled2025-1280.png` |
 | https://www.wildanimalmusic.com/uploads/1/3/0/7/130754475/44-eja-4716-ejafoto-com-marie-john-30-11-2025_orig.jpg | `_originals/band-photo-01.jpg` | `band-photo-01-400.webp`, `band-photo-01-800.webp`, `band-photo-01-1100.webp`, `band-photo-01-1100.jpg` |
 | https://www.wildanimalmusic.com/uploads/1/3/0/7/130754475/335-eja-5323-ejafoto-com-marie-john-30-11-2025_orig.jpg | `_originals/band-photo-02.jpg` | `band-photo-02-400.webp`, `band-photo-02-800.webp`, `band-photo-02-1100.webp`, `band-photo-02-1100.jpg` |
 | https://www.wildanimalmusic.com/uploads/1/3/0/7/130754475/144-eja-4913-ejafoto-com-marie-john-30-11-2025_orig.jpg | `_originals/band-photo-03.jpg` | `band-photo-03-400.webp`, `band-photo-03-800.webp`, `band-photo-03-1100.webp`, `band-photo-03-1100.jpg` |

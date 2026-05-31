@@ -7,7 +7,15 @@ nav_active: musings
 
 <main id="main" class="page">
   <div class="container container--narrow">
-    <h1 class="page__title">Musings</h1>
+    <h1 class="page__title">
+      <picture>
+        <source type="image/webp"
+                srcset="{{ '/assets/images/heading-musings-400.webp' | relative_url }} 400w, {{ '/assets/images/heading-musings-800.webp' | relative_url }} 800w, {{ '/assets/images/heading-musings-1280.webp' | relative_url }} 1280w"
+                sizes="(max-width: 768px) 88vw, 420px">
+        <img src="{{ '/assets/images/heading-musings-1280.png' | relative_url }}" alt="" width="1280" height="720">
+      </picture>
+      <span class="visually-hidden">Musings</span>
+    </h1>
     <p class="page__lede">Thoughts, musings, and everything in between by John Patrick Therrien</p>
 
     <article class="essay-listing">

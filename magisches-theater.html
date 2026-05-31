@@ -7,7 +7,15 @@ description: Wild Animal — Magisches Theater (2024). Album info, tracks, credi
 <main id="main">
   <section class="section">
     <div class="container container--narrow">
-      <h1 class="page__title">Magisches Theater</h1>
+      <h1 class="page__title page__title--dark">
+        <picture>
+          <source type="image/webp"
+                  srcset="{{ '/assets/images/heading-magisches-theater-400.webp' | relative_url }} 400w, {{ '/assets/images/heading-magisches-theater-800.webp' | relative_url }} 800w, {{ '/assets/images/heading-magisches-theater-1280.webp' | relative_url }} 1280w"
+                  sizes="(max-width: 768px) 92vw, 660px">
+          <img src="{{ '/assets/images/heading-magisches-theater-1280.png' | relative_url }}" alt="" width="1280" height="720">
+        </picture>
+        <span class="visually-hidden">Magisches Theater</span>
+      </h1>
       <!-- TODO: add album cover hero once _originals/album-cover-2024.png is in place
            (mirror self-titled2025.html: <picture> with -400/-800 webp + jpg fallback).
            Until then this section title-only. -->
