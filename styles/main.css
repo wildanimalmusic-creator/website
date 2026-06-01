@@ -830,7 +830,7 @@ button {
 }
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .about .parallax-text {
-    background: color-mix(in srgb, var(--color-bg) 82%, transparent);
+    background: color-mix(in srgb, var(--color-bg) 50%, transparent);
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
   }
