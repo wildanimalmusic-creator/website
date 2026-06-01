@@ -818,12 +818,30 @@ button {
 }
 
 /* Readability comes from the content, not from dimming the photo: every text
-   block sits on a flat, opaque paper box so the wallpaper only shows in the
-   gutters between blocks. Scoped to About — this is a trial, not global. */
+   block sits on a rounded paper card lifted off the wallpaper with a soft
+   shadow. Where supported the card is frosted glass — slightly translucent over
+   a blurred backdrop so the wallpaper softly bleeds through while text stays
+   legible; otherwise it falls back to a solid paper fill. Scoped to About. */
 .about .parallax-text {
   background: var(--color-bg);
-  padding: var(--space-5);
-  border-radius: 2px;
+  padding: var(--space-6);
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .about .parallax-text {
+    background: color-mix(in srgb, var(--color-bg) 82%, transparent);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+  }
+}
+
+/* Photos get the same rounded corners so cards and imagery read as one family
+   (opaque — only the text cards are frosted). Covers both the single-column
+   DOM and the desktop two-column split. */
+.about__layout > picture img,
+.about__layout .parallax-layout__inner > picture img {
+  border-radius: 12px;
 }
 
 @media (prefers-reduced-motion: reduce) {
