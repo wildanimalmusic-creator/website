@@ -334,7 +334,14 @@ button {
 }
 .hero__stage .hero__photo img {
   object-fit: cover;
-  object-position: center;
+  /* Anchor the crop to the photo's top edge, not center. The band's
+     heads are framed near the top of this photo; center-crop eats
+     equally off top and bottom and clips them on a narrow viewport.
+     Pinning to the top honors the hero contract above — never cropped
+     from the top — for the static-fallback path (mobile + Safari and
+     any browser without animation-timeline). Excess is taken off the
+     bottom instead. */
+  object-position: center top;
 }
 
 .hero__overlay {
